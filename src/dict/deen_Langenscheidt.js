@@ -81,7 +81,9 @@ class deen_Langenscheidt {
         if(check) {
             firstEntry = doc.querySelector('.lemma-group') || '';
             content = firstEntry.querySelector('.tab-inner-content') || '';
-            return content.innerHTML;
+
+            let css = this.renderCSS();
+            return css + content.innerHTML;
         }
 
         content = doc.querySelectorAll('#inner-content') || '';
