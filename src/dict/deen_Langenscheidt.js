@@ -27,10 +27,10 @@ class deen_Langenscheidt {
     async findLangenscheidt(word) {
         let classesToRemove = [
             'source-section',
-            'synonym-entry', 
-            'source-info', 
-            'senses', 
-            'ad-content-acc-crpexa-1-1', 
+            'synonym-entry',
+            'source-info',
+            'senses',
+            'ad-content-acc-crpexa-1-1',
             'subline',
             'headline',
             'example-trans',
@@ -56,13 +56,13 @@ class deen_Langenscheidt {
         let content = '';
         let firstEntry = '';
         let combinedContent = '';
-        
+
         if (!word) return null;
 
         let base = 'https://en.langenscheidt.com/german-english/';
         let url = base + encodeURIComponent(word);
         let doc = '';
-        
+
         try {
             let data = await api.fetch(url);
             let parser = new DOMParser();
@@ -78,7 +78,7 @@ class deen_Langenscheidt {
             content = firstEntry.querySelector('.tab-inner-content') || '';
             return content.innerHTML;
         }
-        
+
         content = doc.querySelectorAll('#inner-content') || '';
 
         let tag = '';
@@ -107,10 +107,15 @@ class deen_Langenscheidt {
         });
 
         //separate example sentences to increase readability
-        tag = doc.getElementsByClassName('additional-entry');
-        for(let i=0; i<tag.length; i++){
-            tag[i].insertAdjacentHTML('afterend', '<br />');
-        }
+        // tag = doc.getElementsByClassName('additional-entry');
+        // for(let i=0; i<tag.length; i++){
+        //     tag[i].insertAdjacentHTML('afterend', '<br />');
+        // }
+
+        //tag = doc.querySelectorAll('additional-entry');
+        doc
+        .querySelectorAll('additional-entry')
+        .map(x => this.insertAdjacentHTML('afterend', '<br />'));
 
         //separate definitions by linebreak to increase readability
         tag = doc.getElementsByClassName('round');
