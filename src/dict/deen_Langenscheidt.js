@@ -53,6 +53,11 @@ class deen_Langenscheidt {
             'h2'
         ];
 
+        let addLineBreak = [
+            'additional-entry',
+            'round'
+        ];
+
         let content = '';
         let firstEntry = '';
         let combinedContent = '';
@@ -107,21 +112,16 @@ class deen_Langenscheidt {
         });
 
         //separate example sentences to increase readability
-        // tag = doc.getElementsByClassName('additional-entry');
+        addLineBreak.map(e => doc
+          .querySelectorAll(e)
+          .map(x => this.insertAdjacentHTML('afterend', '<br />'))
+        );
+
+        //separate definitions by linebreak to increase readability
+        // tag = doc.getElementsByClassName('round');
         // for(let i=0; i<tag.length; i++){
         //     tag[i].insertAdjacentHTML('afterend', '<br />');
         // }
-
-        //tag = doc.querySelectorAll('additional-entry');
-        doc
-        .querySelectorAll('additional-entry')
-        .map(x => this.insertAdjacentHTML('afterend', '<br />'));
-
-        //separate definitions by linebreak to increase readability
-        tag = doc.getElementsByClassName('round');
-        for(let i=0; i<tag.length; i++){
-            tag[i].insertAdjacentHTML('afterend', '<br />');
-        }
 
         content.forEach((element, index) => {
             combinedContent += content[index].innerHTML;
