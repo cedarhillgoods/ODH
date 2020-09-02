@@ -131,7 +131,7 @@ class deen_Langenscheidt {
     renderCSS() {
         let css = `
             <style>
-                #tab-examples-1-1 {
+                input {
                     display: none;
                 }
             </style>`;
