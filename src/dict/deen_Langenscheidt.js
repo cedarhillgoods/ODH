@@ -111,17 +111,11 @@ class deen_Langenscheidt {
             });
         });
 
-        //separate example sentences to increase readability
-        addLineBreak.map(e => doc
-          .querySelectorAll(e)
+        //separate sections by linebreak to increase readability
+        addLineBreak.map(element => doc
+          .querySelectorAll(element)
           .map(x => this.insertAdjacentHTML('afterend', '<br />'))
         );
-
-        //separate definitions by linebreak to increase readability
-        // tag = doc.getElementsByClassName('round');
-        // for(let i=0; i<tag.length; i++){
-        //     tag[i].insertAdjacentHTML('afterend', '<br />');
-        // }
 
         content.forEach((element, index) => {
             combinedContent += content[index].innerHTML;
