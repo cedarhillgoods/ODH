@@ -95,7 +95,7 @@ class deen_Langenscheidt {
             for(let i=0; i<tag.length; i++){
                 tag[i].remove();
             }
-        })
+        });
 
         //get rid of unnecessary filler material in definition
         let junk = '';
@@ -116,7 +116,7 @@ class deen_Langenscheidt {
         //separate sections by linebreak to increase readability
         addLineBreak.map(element => doc
           .querySelectorAll(element)
-          .map(x => this.insertAdjacentHTML('afterend', '<br />'))
+          .map(element => this.insertAdjacentHTML('afterend', '<br />'))
         );
 
         content.forEach((element, index) => {
