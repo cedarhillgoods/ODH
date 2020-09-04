@@ -114,10 +114,11 @@ class deen_Langenscheidt {
         });
 
         //separate sections by linebreak to increase readability
-        addLineBreak.map(element => doc
+        addLineBreak
+          .forEach(element => doc
           .querySelectorAll(element)
-          .map(x => this.insertAdjacentHTML('afterend', '<br />'))
-        );
+          .forEach(element => this.insertAdjacentHTML('afterend', '<br />'))
+          );
 
         content.forEach((element, index) => {
             combinedContent += content[index].innerHTML;
