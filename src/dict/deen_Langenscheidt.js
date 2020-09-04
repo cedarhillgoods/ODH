@@ -114,11 +114,11 @@ class deen_Langenscheidt {
         });
 
         //separate sections by linebreak to increase readability
-        addLineBreak
-          .forEach(element => doc
-          .querySelectorAll(element)
-          .forEach(element => this.insertAdjacentHTML('afterend', '<br />'))
-          );
+        // addLineBreak
+        //   .forEach(element => doc
+        //   .querySelectorAll(element)
+        //   .forEach(element => this.insertAdjacentHTML('afterend', '<br />'))
+        //   );
 
         content.forEach((element, index) => {
             combinedContent += content[index].innerHTML;
