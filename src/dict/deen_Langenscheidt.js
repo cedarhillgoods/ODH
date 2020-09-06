@@ -123,6 +123,7 @@ class deen_Langenscheidt {
         for(let i=0; i<addLineBreak.length; i++)
         {
           let x = doc.querySelectorAll(addLineBreak[i]);
+          console.log(x);
           x.forEach((item, i) => {
             this.insertAdjacentHTML('afterend', '<br />');
           });
