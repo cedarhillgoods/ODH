@@ -120,10 +120,13 @@ class deen_Langenscheidt {
         //   .forEach(element => this.insertAdjacentHTML('afterend', '<br />'))
         //   );
 
-        addLineBreak.forEach(item => {
-          let x = doc.querySelectorAll(item);
-          x.forEach(item => this.insertAdjacentHTML(('afterend', '<br />')))
-        });
+        for(let i=0; i<addLineBreak.length; i++)
+        {
+          let x = doc.querySelectorAll(addLineBreak[i]);
+          x.forEach((item, i) => {
+            this.insertAdjacentHTML('afterend', '<br />');
+          });
+        }
 
 
         content.forEach((element, index) => {
