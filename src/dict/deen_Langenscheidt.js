@@ -129,7 +129,13 @@ class deen_Langenscheidt {
         //   });
         // }
 
-        let x = doc.getElementsByClassName('additional-entry');
+        // let x = doc.getElementsByClassName('additional-entry');
+        // for(let i=0; i<x.length; i++)
+        // {
+        //   x[i].insertAdjacentHTML('afterend', '<br />');
+        // }
+
+        let x = doc.querySelectorAll('.additional-entry');
         for(let i=0; i<x.length; i++)
         {
           x[i].insertAdjacentHTML('afterend', '<br />');
