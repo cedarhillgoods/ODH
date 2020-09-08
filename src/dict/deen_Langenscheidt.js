@@ -59,7 +59,7 @@ class deen_Langenscheidt {
         ];
 
         let content = '';
-        //let firstEntry = '';
+        let firstEntry = '';
         let combinedContent = '';
 
         if (!word) return null;
@@ -79,7 +79,7 @@ class deen_Langenscheidt {
         //take the first entry incase Langenscheit gets confused and gives you multiple entrys
         let check = doc.querySelector('#did-you-mean');
         if(check) {
-            let firstEntry = doc.querySelector('.lemma-group') || '';
+            firstEntry = doc.querySelector('.lemma-group') || '';
             content = firstEntry.querySelector('.tab-inner-content') || '';
 
             let css = this.renderCSS();
