@@ -168,9 +168,9 @@ class deen_Langenscheidt {
     renderCSS() {
         let css = `
             <style>
-                // input {
-                //     display: none;
-                // }
+                input {
+                    display: none;
+                }
             </style>`;
 
         return css;
