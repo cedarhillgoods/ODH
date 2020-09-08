@@ -135,11 +135,18 @@ class deen_Langenscheidt {
         //   x[i].insertAdjacentHTML('afterend', '<br />');
         // }
 
+        // let x = doc.querySelectorAll('.additional-entry');
+        // for(let i=0; i<x.length; i++)
+        // {
+        //   x[i].insertAdjacentHTML('afterend', '<br />');
+        // }
+
         let x = doc.querySelectorAll('.additional-entry');
-        for(let i=0; i<x.length; i++)
-        {
+        x.forEach((item, i) => {
           x[i].insertAdjacentHTML('afterend', '<br />');
-        }
+        });
+        
+        
 
         content.forEach((element, index) => {
             combinedContent += content[index].innerHTML;
