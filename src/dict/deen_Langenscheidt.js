@@ -114,26 +114,12 @@ class deen_Langenscheidt {
         });
 
         //separate sections by linebreak to increase readability
-        // addLineBreak
-        //   .forEach(element => doc
-        //   .querySelectorAll(element)
-        //   .forEach(element => this.insertAdjacentHTML('afterend', '<br />'))
-        //   );
-
-        // for(let i=0; i<addLineBreak.length; i++)
-        // {
-        //   let x = doc.querySelectorAll(addLineBreak[i]);
-        //   console.log(x);
-        //   x.forEach((item, i) => {
-        //     this.insertAdjacentHTML('afterend', '<br />');
-        //   });
-        // }
-
-        let x = doc.querySelectorAll('.additional-entry');
-        for(let i=0; i<x.length; i++)
-        {
-          x[i].insertAdjacentHTML('afterend', '<br />');
-        }
+        addLineBreak.forEach((item, i) => {
+            let x = addLineBreak[i].doc.querySelectorAll(item);
+            x.forEach((item, i) => {
+              x[i].insertAdjacentHTML('afterend', '<br />');
+            });
+        });
 
         content.forEach((element, index) => {
             combinedContent += content[index].innerHTML;
@@ -147,9 +133,9 @@ class deen_Langenscheidt {
     renderCSS() {
         let css = `
             <style>
-                // input {
-                //     display: none;
-                // }
+                input {
+                    display: none;
+                }
             </style>`;
 
         return css;
