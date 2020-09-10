@@ -96,30 +96,30 @@ class deen_Langenscheidt {
             }
         });
 
-        //get rid of unnecessary filler material in definition
-        let junk = '';
-        classesToRemove.forEach((element) => {
-            junk = doc.querySelectorAll('.' + element);
-            junk.forEach((element, index) => {
-                junk[index].textContent = '';
-            });
-        });
-
-        idsToRemove.forEach((element) => {
-            junk = doc.querySelectorAll('#' + element);
-            junk.forEach((element, index) => {
-                junk[index].textContent = '';
-            });
-        });
-
-        //separate sections by linebreak to increase readability
-        let x = '';
-        addLineBreak.forEach((item, i) => {
-            x = doc.querySelectorAll('.' + item);
-            x.forEach((item, i) => {
-              x[i].insertAdjacentHTML('afterend', '<br />');
-            });
-        });
+        // //get rid of unnecessary filler material in definition
+        // let junk = '';
+        // classesToRemove.forEach((element) => {
+        //     junk = doc.querySelectorAll('.' + element);
+        //     junk.forEach((element, index) => {
+        //         junk[index].textContent = '';
+        //     });
+        // });
+        // 
+        // idsToRemove.forEach((element) => {
+        //     junk = doc.querySelectorAll('#' + element);
+        //     junk.forEach((element, index) => {
+        //         junk[index].textContent = '';
+        //     });
+        // });
+        // 
+        // //separate sections by linebreak to increase readability
+        // let x = '';
+        // addLineBreak.forEach((item, i) => {
+        //     x = doc.querySelectorAll('.' + item);
+        //     x.forEach((item, i) => {
+        //       x[i].insertAdjacentHTML('afterend', '<br />');
+        //     });
+        // });
 
         content.forEach((element, index) => {
             combinedContent += content[index].innerHTML;
