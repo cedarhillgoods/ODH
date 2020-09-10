@@ -112,7 +112,7 @@ class deen_Langenscheidt {
             });
         });
 
-        separate sections by linebreak to increase readability
+        //separate sections by linebreak to increase readability
         addLineBreak.forEach((item, i) => {
             let x = doc.querySelectorAll('.' + item);
             x.forEach((item, i) => {
