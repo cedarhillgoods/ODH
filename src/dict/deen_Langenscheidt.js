@@ -114,7 +114,7 @@ class deen_Langenscheidt {
 
         separate sections by linebreak to increase readability
         addLineBreak.forEach((item, i) => {
-            let x = addLineBreak[i].(doc.querySelectorAll(item));
+            let x = doc.querySelectorAll('.' + item);
             x.forEach((item, i) => {
               x[i].insertAdjacentHTML('afterend', '<br />');
             });
